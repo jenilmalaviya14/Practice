@@ -6,7 +6,6 @@ const config = require("./config/config");
 const routes = require("./routes/v1");
 const app = express();
 const http = require("http");
-mongoose.connect("mongodb+srv://jenilmalaviya14:ZsXFZUW0AJuxrcGK@jenil.x4sdtoa.mongodb.net/")
 
 const category = require("./models/category")
 async function getInsert() {
