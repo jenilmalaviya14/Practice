@@ -44,7 +44,7 @@ const addmission = require("./models/addmission")
 // getSave();
 
 const user = require("./models/user");
-async function createUser() {
+async function getUser() {
     const result = await user.create({
         first_name: "Sumit",
         last_name: "Patel",
@@ -53,7 +53,7 @@ async function createUser() {
     })
     console.log(result);
 }
-createUser()
+getUser()
 
 const student = require("./models/student");
 // async function getStdata() {

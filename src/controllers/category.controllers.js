@@ -1,9 +1,9 @@
-const userServices = require("../services/user.service");
-const User = require('../models/user')
+const userServices = require("../services/category.service");
+const Category = require('../models/category')
 
-const getUser = async (req, res) => {
+const getCategory = async (req, res) => {
     try {
-     const user = await User.find()
+     const user = await Category.find()
       res.status(200).json({
         success: true,
         message: "User create successfully!",
@@ -14,4 +14,4 @@ const getUser = async (req, res) => {
     }
   };
 
-  module.exports = getUser;
+  module.exports = getCategory;
