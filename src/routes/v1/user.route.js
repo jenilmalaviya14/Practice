@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const userValidation = require("../../validation/user.validation");
-const userController  = require("../../controllers/user.controllers");
+const userController = require("../../controllers/user.controllers");
 const validate = require("../../middlewares/validate");
-const addmission = require("../../models/addmission")
-
 
 /** Get user list */
 router.get(
@@ -13,7 +11,7 @@ router.get(
   userController
 );
 
-  module.exports = router;
+module.exports = router;
 
 
 

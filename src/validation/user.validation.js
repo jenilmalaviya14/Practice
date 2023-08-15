@@ -1,21 +1,14 @@
 const Joi = require("joi");
 
-/** create user */
+/** get user */
+
 const getUser =  {
-  body: Joi.object().keys({
+  query: Joi.object().keys({
     first_name: Joi.string().required().trim(),
-    student_bday: Joi.string().required().trim(),
-    student_email: Joi.string().required().trim()
+    last_name: Joi.string().required().trim(),
+    email: Joi.string().required().trim(),
+    password:Joi.string()
   }),
 };
-
-/** GEt user list */
-// const creatUser = {
-//   query: Joi.object().keys({
-//     first_name: Joi.string().trim().allow(""),
-//     student_bday: Joi.string().trim().allow(""),
-//     student_email: Joi.number().integer().allow("")
-//   }),
-// };
 
 module.exports = getUser;
