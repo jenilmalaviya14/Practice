@@ -1,25 +1,21 @@
 const express = require("express");
-const router = express.Router();
-const userValidation = require("../../validation/user.validation");
-const userController = require("../../controllers/user.controllers");
+const userValidation  = require("../../validation/user.validation");
+const userController  = require("../../controllers/user.controllers");
 const validate = require("../../middlewares/validate");
 
-/** Get user list */
-router.get(
-  "/list",
-  validate(userValidation),
-  userController
+const router = express.Router();
+
+/** create user */
+router.post(
+  "/create-user",
+  validate(userValidation.createUser),
+  userController.createUser
 );
 
+/** Get user list */
+// router.get(
+//   "/list",
+//   // validate(userValidation.getUserList),
+//   userController.getUserList
+// );
 module.exports = router;
-
-
-
-
-  // router.get("/list",async(req,res)=>{
-  // const data =await addmission.find();
-  // res.send(data)
-  // })
-
-
-

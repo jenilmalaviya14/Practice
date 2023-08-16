@@ -1,5 +1,6 @@
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
+const bodyParser = require("body-parser");
 const date = require("date-and-time");
 const { connectDB } = require("./db/dbconnection")
 const config = require("./config/config");
@@ -43,7 +44,7 @@ const addmission = require("./models/addmission")
 // }
 // getSave();
 
-const user = require("./models/user");
+const user = require("./models/user.model");
 async function createUser() {
     const result = await user.create({
         first_name: "Sumit",
@@ -76,15 +77,18 @@ const student = require("./models/student");
 //     console.log(result);
 // }
 // getStdata()
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
 
 
 connectDB();
 
 app.use("/v1", routes);
 
-app.use((req, res, next) => {
-    next(new Error("Route not found!"));
-});
+// app.use((req, res, next) => {
+//     next(new Error("Route not found!"));
+// });
 
 const server = http.createServer(app);
 
